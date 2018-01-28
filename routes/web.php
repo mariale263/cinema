@@ -11,6 +11,8 @@
 |
 */
 
+Route::resource('movie', 'MovieController');
+
 Route::get('/', function () {
     return view('welcome');
 });
