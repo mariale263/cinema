@@ -12,12 +12,18 @@ use Redirect;
 
 class UsuarioController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+        $this->middleware('admin');
+        
+    }
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+     public function index()
     {
         $users = User::paginate(2);
         return view('usuario.index',compact('users'));

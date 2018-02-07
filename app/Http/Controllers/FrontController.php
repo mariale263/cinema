@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
+
+    public function __Construct(){
+        $this->middleware('auth',['only'=>'admin']);
+    }
+    
     /**
      * Display a listing of the resource.
      *
